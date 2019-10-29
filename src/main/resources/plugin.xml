@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>com.custom.plugin</id>
+    <name>Inspections Extras</name>
+    <vendor email="test@example.com"
+            url="http://www.example.com">Example
+    </vendor>
+
+    <description><![CDATA[
+      Demo plugin written in Kotlin for Kotlin syntax check to
+      ensure camelcase naming and also a notification plugin
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Release notes : Camelcase naming check and Notification plugin
+    ]]>
+    </change-notes>
+
+    <depends>org.jetbrains.kotlin</depends>
+    <!-- Code Inspection Component  -->
+    <extensions defaultExtensionNs="com.intellij">
+        <inspectionToolProvider implementation="com.plugin.inspection.CustomInspectionProvider"/>
+    </extensions>
+
+    <depends>com.intellij.modules.lang</depends>
+    <!-- Notification Component  -->
+    <project-components>
+        <component>
+            <implementation-class>
+                com.plugin.inspection.CustomNotificationComponent
+            </implementation-class>
+        </component>
+    </project-components>
+
+</idea-plugin>
